@@ -28,5 +28,6 @@ public class ProjectServiceImpl implements ProjectService{
 		return projectRepository.findAll();
 	}
 
+	public void saveProject(Project project) { projectRepository.save(project); };
 
 }

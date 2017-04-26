@@ -9,10 +9,28 @@ angular.module('crudApp').factory('ProjectService',
 
             var factory = {
                 getAllProjects: getAllProjects,
-                loadAllProjects : loadAllProjects
+                loadAllProjects : loadAllProjects,
+                createProject : createProject
             };
 
             return factory;
+
+            function createProject(project) {
+                console.log('Creating Project');
+                var deferred = $q.defer();
+                $http.post(urls.PROJECT_SERVICE_API, project)
+                    .then(
+                        function (response) {
+                            loadAllProjects();
+                            deferred.resolve(response.data);
+                        },
+                        function (errResponse) {
+                            console.error('Error while creating Project : '+errResponse.data.errorMessage);
+                            deferred.reject(errResponse);
+                        }
+                    );
+                return deferred.promise;
+            }
 
             function loadAllProjects() {
                 console.log('Fetching all projects');

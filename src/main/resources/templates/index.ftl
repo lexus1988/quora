@@ -2,7 +2,7 @@
 
 <html lang="en" ng-app="crudApp">
     <head>
-        <title>${title}</title>
+        <title>RelaseManager</title>
         <link href="css/bootstrap.css" rel="stylesheet"/>
         <link href="css/app.css" rel="stylesheet"/>
     </head>
