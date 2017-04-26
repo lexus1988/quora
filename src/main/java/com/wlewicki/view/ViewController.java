@@ -1,10 +1,12 @@
-package conf.view;
+package com.wlewicki.view;
 
-import conf.repo.ProjectRepository;
+import com.wlewicki.repo.ProjectRepository;
 import net.sf.ehcache.CacheManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -17,10 +19,16 @@ public class ViewController {
     @Autowired
     ProjectRepository repo;
 
-    @Autowired
-    CacheManager manago;
+    @RequestMapping("/")
+    String home(ModelMap modal) {
+        modal.addAttribute("title","CRUD Example");
+        return "index";
+    }
 
-
+    @RequestMapping("/partials/{page}")
+    String partialHandler(@PathVariable("page") final String page) {
+        return page;
+    }
 
 
     @RequestMapping("/hello")

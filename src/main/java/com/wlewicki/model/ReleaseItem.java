@@ -1,4 +1,4 @@
-package conf.model;
+package com.wlewicki.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

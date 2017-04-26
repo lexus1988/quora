@@ -1,10 +1,10 @@
-package conf.ws;
+package com.wlewicki.ws;
 
 
-import conf.model.Project;
-import conf.model.ReleaseItem;
-import conf.repo.ProjectRepository;
-import conf.repo.ReleaseItemRepository;
+import com.wlewicki.model.Project;
+import com.wlewicki.model.ReleaseItem;
+import com.wlewicki.repo.ProjectRepository;
+import com.wlewicki.repo.ReleaseItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

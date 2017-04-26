@@ -1,6 +1,6 @@
-package conf.repo;
+package com.wlewicki.repo;
 
-import conf.model.ReleaseItem;
+import com.wlewicki.model.ReleaseItem;
 import org.springframework.data.repository.CrudRepository;
 
 /**
