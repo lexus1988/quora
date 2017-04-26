@@ -1,9 +1,9 @@
 package com.wlewicki.repo;
 
-import java.util.List;
-
 import com.wlewicki.model.Project;
 import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
 
 public interface ProjectRepository extends CrudRepository<Project, Long> {
 

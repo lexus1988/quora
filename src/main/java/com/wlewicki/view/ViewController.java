@@ -1,10 +1,6 @@
 package com.wlewicki.view;
 
-import com.wlewicki.repo.ProjectRepository;
-import net.sf.ehcache.CacheManager;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ViewController {
 
-    @Autowired
-    ProjectRepository repo;
 
     @RequestMapping("/")
     String home(ModelMap modal) {
-        modal.addAttribute("title","CRUD Example");
         return "index";
     }
 
@@ -31,13 +24,7 @@ public class ViewController {
     }
 
 
-    @RequestMapping("/hello")
-    public String hello(Model model) {
-        model.addAttribute("project", repo.findByName("test").get(0) );
 
-
-        return "hello";
-    }
 
 
 }
